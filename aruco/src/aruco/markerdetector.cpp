@@ -248,7 +248,7 @@ std::vector<MarkerDetector::MarkerCandidate> MarkerDetector::thresholdAndDetectR
   // if image is eroded, minSize must be adapted
   std::vector<cv::Vec4i> hierarchy;
   std::vector<std::vector<cv::Point>> contours;
-  cv::findContours(auxThresImage, contours, cv::noArray(), CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
+  cv::findContours(auxThresImage, contours, cv::noArray(), cv::CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
   tev.add("find-cont");
   std::vector<cv::Point> approxCurve;
 
