@@ -560,7 +560,7 @@ void MarkerDetector::detect(const cv::Mat& input, std::vector<Marker>& detectedM
 
   // it must be a 3 channel image
   if (input.type() == CV_8UC3)
-    cv::cvtColor(input, grey, COLOR_BGR2GRAY);
+    cv::cvtColor(input, grey, cv::COLOR_BGR2GRAY);
 //  convertToGray(input, grey);
   else
     grey = input;
@@ -1186,10 +1186,10 @@ void MarkerDetector::draw(cv::Mat out, const std::vector<Marker>& markers)
 {
   for (unsigned int i = 0; i < markers.size(); i++)
   {
-    cv::line(out, markers[i][0], markers[i][1], cvScalar(255, 0, 0), 2, LINE_AA);
-    cv::line(out, markers[i][1], markers[i][2], cvScalar(255, 0, 0), 2, LINE_AA);
-    cv::line(out, markers[i][2], markers[i][3], cvScalar(255, 0, 0), 2, LINE_AA);
-    cv::line(out, markers[i][3], markers[i][0], cvScalar(255, 0, 0), 2, LINE_AA);
+    cv::line(out, markers[i][0], markers[i][1], cvScalar(255, 0, 0), 2, cv::LINE_AA);
+    cv::line(out, markers[i][1], markers[i][2], cvScalar(255, 0, 0), 2, cv::LINE_AA);
+    cv::line(out, markers[i][2], markers[i][3], cvScalar(255, 0, 0), 2, cv::LINE_AA);
+    cv::line(out, markers[i][3], markers[i][0], cvScalar(255, 0, 0), 2, cv::LINE_AA);
   }
 }
 
